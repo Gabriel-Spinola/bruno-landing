@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
 const images = [
   "/new/IMG_0196.JPG",
@@ -50,13 +51,13 @@ export default function BannerCarousel() {
         onClick={goToNext}
       />
 
-      {/* Arrows (optional visual feedback) */}
-      <div className="absolute top-1/2 left-4 -translate-y-1/2 z-30 text-white text-xl pointer-events-none select-none">
-        ◀
+      <div className="absolute top-1/2 left-4 -translate-y-1/2 z-30 text-white pointer-events-none select-none">
+        <ChevronLeftIcon className="h-6 w-6" />
       </div>
-      <div className="absolute top-1/2 right-4 -translate-y-1/2 z-30 text-white text-xl pointer-events-none select-none">
-        ▶
+      <div className="absolute top-1/2 right-4 -translate-y-1/2 z-30 text-white pointer-events-none select-none">
+        <ChevronRightIcon className="h-6 w-6" />
       </div>
+
 
       {/* Dots */}
       <div className="absolute bottom-4 w-full flex justify-center gap-2 z-30">

@@ -191,30 +191,46 @@ export default function Home() {
         <section id="sobre" className="flex flex-col gap-10 sm:gap-14 min-h-screen w-full pt-20">
           <h1 className="uppercase text-3xl sm:text-5xl font-bold text-center scroll-animated opacity-0 translate-y-10 transition-all duration-700">sobre nós</h1>
 
-          <article className="flex flex-col sm:flex-row w-full">
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 w-full gap-6">
-              <div className="flex flex-col gap-4 bg-[var(--background-light)] px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-100">
-                <i className="text-[#E3B930] text-2xl">🏋️</i>
-                <h2 className="uppercase font-bold text-lg">atendimento</h2>
-                <p>Treinos ajustados para o seu nível e objetivos</p>
-              </div>
-              <div className="flex flex-col gap-4 bg-[var(--background-light)] px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-200">
-                <i className="text-[#E3B930] text-2xl">🥗</i>
-                <h2 className="uppercase font-bold text-lg">nutrição</h2>
-                <p>Orientação nutricional personalizada para seus objetivos</p>
-              </div>
-              <div className="flex flex-col gap-4 bg-[var(--background-light)] px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-300">
-                <i className="text-[#E3B930] text-2xl">📊</i>
-                <h2 className="uppercase font-bold text-lg">avaliação</h2>
-                <p>Acompanhamento completo da sua evolução física</p>
-              </div>
-              <div className="flex flex-col gap-4 bg-[var(--background-light)] px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-400">
-                <i className="text-[#E3B930] text-2xl">🔄</i>
-                <h2 className="uppercase font-bold text-lg">resultados</h2>
-                <p>Metodologia exclusiva para atingir seus objetivos</p>
-              </div>
+          <article className="w-full px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+              {[
+                {
+                  icon: "🏋️",
+                  title: "atendimento",
+                  text: "Treinos ajustados para o seu nível e objetivos",
+                  delay: "100",
+                },
+                {
+                  icon: "🥗",
+                  title: "nutrição",
+                  text: "Orientação nutricional personalizada para seus objetivos",
+                  delay: "200",
+                },
+                {
+                  icon: "📊",
+                  title: "avaliação",
+                  text: "Acompanhamento completo da sua evolução física",
+                  delay: "300",
+                },
+                {
+                  icon: "🔄",
+                  title: "resultados",
+                  text: "Metodologia exclusiva para atingir seus objetivos",
+                  delay: "400",
+                },
+              ].map(({ icon, title, text, delay }) => (
+                <div
+                  key={title}
+                  className={`flex flex-col gap-4 bg-[var(--background-light)] px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-300 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-${delay}`}
+                >
+                  <i className="text-[#E3B930] text-2xl">{icon}</i>
+                  <h2 className="uppercase font-bold text-lg">{title}</h2>
+                  <p>{text}</p>
+                </div>
+              ))}
             </div>
           </article>
+
 
           <BannerCarousel />
         </section>
