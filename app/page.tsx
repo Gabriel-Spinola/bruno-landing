@@ -192,7 +192,7 @@ export default function Home() {
           <h1 className="uppercase text-3xl sm:text-5xl font-bold text-center scroll-animated opacity-0 translate-y-10 transition-all duration-700">sobre nós</h1>
 
           <article className="flex flex-col sm:flex-row w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 w-full gap-6">
               <div className="flex flex-col gap-4 bg-[var(--background-light)] px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-100">
                 <i className="text-[#E3B930] text-2xl">🏋️</i>
                 <h2 className="uppercase font-bold text-lg">atendimento</h2>
