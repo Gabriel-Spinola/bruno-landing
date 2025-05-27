@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+* Musculação
 
-## Getting Started
+Oferecemos preparação para pessoas com nenhuma, baixa ou média prática em esportes, além de preparação infanto juvenil e trabalho específico para consciência corporal em todas as idades.
+Também contamos com uma preparação para atletas de alta performance.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* Funcional
+Aeróbico, percepção e coordenação motora são exemplos de atividades para melhoria da mobilidade presentes no nosso espaço.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Massoterapia esportiva
+No nosso Studio, contamos com procedimentos como:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Liberação mio-facial
+Dryneeling
+Anatomia palpatória
+Ventoso terapia 
+Correção muscular
+Imersão em gelo
+Eletro-estimulação
+Drenagem linfática
+Drenagem modeladora
+Massagem esportiva
 
-## Learn More
+* Nutrição esportiva
+Possuímos parceria com especialistas em nutrição, para te direcionar da melhor forma possível e unir de forma completa os exercícios e a alimentação necessária para alcançar o seu objetivo.
 
-To learn more about Next.js, take a look at the following resources:
+* Fisioterapia 
+Parceria com fisioterapeuta para atender casos de mais complexidade com a maior assertividade possível.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Qualificações 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Educador físico 
+Massoterapeuta
+Treinador de alta performance
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2015 (começou como profissional) 10 anos de experiência
+Março de 2020 (abertura do Studio)

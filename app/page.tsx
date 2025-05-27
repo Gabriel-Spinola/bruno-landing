@@ -1,9 +1,10 @@
 'use client'
 
 import Image from "next/image";
-import bottomRightTriangle from "@/public/shapes/bottomrighttriangle.png";
 import arrowDownIcon from "@/public/icons/Frame.svg";
 import { useEffect } from "react";
+import SessionsModal from "./SessionsModals";
+import BannerCarousel from "./Carousel";
 
 export default function Home() {
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function Home() {
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 80, 
+          top: targetElement.offsetTop - 80,
           behavior: 'smooth'
         });
       }
@@ -46,8 +47,13 @@ export default function Home() {
 
     if (mobileMenuButton && mobileMenu && closeMenuButton) {
       mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('flex');
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+        } else {
+          mobileMenu.classList.remove('flex');
+          mobileMenu.classList.add('hidden');
+        }
       });
 
       closeMenuButton.addEventListener('click', () => {
@@ -167,7 +173,7 @@ export default function Home() {
             <div className="relative h-[50vh] sm:h-[70vh] md:h-[85vh] w-full">
               <Image
                 className="relative z-10 object-cover"
-                src={"/image1.png"}
+                src={"/new/IMG_5296.jpg"}
                 alt=""
                 fill
                 priority
@@ -210,114 +216,26 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="w-full h-full relative my-10 scroll-animated opacity-0 translate-y-10 transition-all duration-700">
-            <Image className="relative! rounded-xl" src={"/bannerlarge.png"} alt={"Banner do Studio Bruno Muniz"} fill />
-          </article>
+          <BannerCarousel />
         </section>
 
         {/* Sessões Section */}
-        <section id="sessoes" className="flex flex-col gap-10 sm:gap-16 w-full py-10 relative pt-20">
+        <section id="sessoes" className="flex flex-col gap-10 sm:gap-16 w-full py-10 relative pt-10">
           {/* Diagonal line accent */}
           <div className="absolute -left-10 top-20 w-32 h-1 bg-gradient-to-r from-[#E3B930] to-[#F28F05] transform -rotate-45 opacity-70"></div>
-
           <h1 className="uppercase text-3xl sm:text-5xl font-bold text-center scroll-animated opacity-0 translate-y-10 transition-all duration-700">nossas sessões</h1>
           <p className="text-center text-lg max-w-3xl mx-auto scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-100">
             O Studio Bruno Muniz é o ambiente onde seu objetivo de evoluir se torna realidade. Aprenda a treinar de verdade, se alimentar melhor e obter o melhor que seu corpo pode te oferecer.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            <div className="bg-[var(--background-light)] rounded-xl overflow-hidden group hover:shadow-lg transition-all duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-100">
-              <div className="relative h-60 w-full overflow-hidden">
-                <Image
-                  src="/treino-personalizado.jpg"
-                  alt="Treino Personalizado"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-                <h3 className="absolute bottom-4 left-4 text-2xl font-bold uppercase text-white">Treino Personalizado</h3>
-              </div>
-              <div className="p-6">
-                <p className="mb-4">
-                  Treine como um atleta, viva como um campeão. Nossos treinos personalizados, baseados em técnicas inovadoras, te preparam para superar seus limites e alcançar resultados que você nunca imaginou.
-                </p>
-                <button className="uppercase font-bold text-sm bg-gradient-to-r from-[#E3B930] to-[#F28F05] py-2 px-4 rounded-lg hover:shadow-md hover:shadow-[#E3B93030] transition-all duration-300">
-                  Saiba mais
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-[var(--background-light)] rounded-xl overflow-hidden group hover:shadow-lg transition-all duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-200">
-              <div className="relative h-60 w-full overflow-hidden">
-                <Image
-                  src="/saude-integrada.jpg"
-                  alt="Saúde Integrada"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-                <h3 className="absolute bottom-4 left-4 text-2xl font-bold uppercase text-white">Saúde Integrada</h3>
-              </div>
-              <div className="p-6">
-                <p className="mb-4">
-                  Acreditamos que a saúde vai além da estética. Por isso, oferecemos um programa completo que integra exercícios físicos, nutrição, massoterapia e fisioterapia, para um bem-estar completo.
-                </p>
-                <button className="uppercase font-bold text-sm bg-gradient-to-r from-[#E3B930] to-[#F28F05] py-2 px-4 rounded-lg hover:shadow-md hover:shadow-[#E3B93030] transition-all duration-300">
-                  Saiba mais
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-[var(--background-light)] rounded-xl overflow-hidden group hover:shadow-lg transition-all duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-300">
-              <div className="relative h-60 w-full overflow-hidden">
-                <Image
-                  src="/performance.jpg"
-                  alt="Centro de Performance"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-                <h3 className="absolute bottom-4 left-4 text-2xl font-bold uppercase text-white">Centro de Performance</h3>
-              </div>
-              <div className="p-6">
-                <p className="mb-4">
-                  No Studio Bruno Muniz, não somos apenas uma academia, somos um centro de performance humana. Com acompanhamento individualizado, você terá acesso a um time de especialistas trabalhando em sinergia para o seu sucesso.
-                </p>
-                <button className="uppercase font-bold text-sm bg-gradient-to-r from-[#E3B930] to-[#F28F05] py-2 px-4 rounded-lg hover:shadow-md hover:shadow-[#E3B93030] transition-all duration-300">
-                  Saiba mais
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-[var(--background-light)] rounded-xl overflow-hidden group hover:shadow-lg transition-all duration-100 scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-400">
-              <div className="relative h-60 w-full overflow-hidden">
-                <Image
-                  src="/comunidade.jpg"
-                  alt="Nossa Comunidade"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-                <h3 className="absolute bottom-4 left-4 text-2xl font-bold uppercase text-white">Nossa Comunidade</h3>
-              </div>
-              <div className="p-6">
-                <p className="mb-4">
-                  Junte-se a uma comunidade de pessoas motivadas e conquiste a sua melhor versão! Aqui, você não é apenas mais um aluno, você é parte de uma comunidade que busca a excelência em cada movimento.
-                </p>
-                <button className="uppercase font-bold text-sm bg-gradient-to-r from-[#E3B930] to-[#F28F05] py-2 px-4 rounded-lg hover:shadow-md hover:shadow-[#E3B93030] transition-all duration-300">
-                  Saiba mais
-                </button>
-              </div>
-            </div>
-          </div>
+          {/* Sessions Modal Component */}
+          <SessionsModal />
 
           {/* Circle accent */}
           <div className="absolute -right-16 bottom-40 w-32 h-32 rounded-full border-2 border-[#E3B93030] opacity-50"></div>
-
           <div className="w-full bg-gradient-to-r from-[#E3B930] to-[#F28F05] p-6 sm:p-10 rounded-xl mt-6 flex flex-col sm:flex-row items-center justify-between relative overflow-hidden scroll-animated opacity-0 translate-y-10 transition-all duration-700">
             {/* Abstract geometric shape in the background */}
             <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-md"></div>
-
             <div className="mb-6 sm:mb-0 relative z-10">
               <h3 className="text-black font-bold text-2xl mb-2">Pronto para transformar seu corpo e sua vida?</h3>
               <p className="text-black/80">Agende sua avaliação gratuita e dê o primeiro passo!</p>
@@ -374,13 +292,13 @@ export default function Home() {
           <h1 className="uppercase text-3xl sm:text-5xl font-bold text-center scroll-animated opacity-0 translate-y-10 transition-all duration-700">nossa localização</h1>
 
           <p className="text-center text-lg max-w-3xl mx-auto scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-100">
-            Estamos situados em um local de fácil acesso no centro da cidade. Venha nos visitar e conhecer nossa estrutura premium.
+            Estamos situados em um local de fácil. Venha nos visitar e conhecer nossa estrutura premium.
           </p>
 
           <div className="w-full h-96 rounded-xl overflow-hidden scroll-animated opacity-0 translate-y-10 transition-all duration-700 delay-200">
             {/* Google Maps iframe */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0974535045486!2d-46.65390548502264!3d-23.564611784678845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1649453342743!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.779695064405!2d-44.06481428825406!3d-19.9757650813455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6bfadf847000d%3A0x42f0a7b6772d17b2!2sR.%20Weaver%2C%20170%20-%20Lind%C3%A9ia%2C%20Belo%20Horizonte%20-%20MG%2C%2030690-740!5e0!3m2!1sen!2sbr!4v1748350732999!5m2!1sen!2sbr"
               width="100%"
               height="100%"
               style={{ border: 0 }}
