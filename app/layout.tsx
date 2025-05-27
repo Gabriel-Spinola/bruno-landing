@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/logo.png"
+  },
   title: "Studio Bruno Muniz",
   description: "Treinamento personalizado com abordagem integrada de saúde, nutrição e performance. Transforme seu corpo e sua vida com acompanhamento especializado.",
   keywords: [
@@ -56,6 +59,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
